@@ -1,18 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 class="title">{{ title }}</h1>
+    <p class="instruction">{{ text }}</p>
+     <router-link class="btn start" :to="{ name: 'Questions', params: { id: this.id } }">Start</router-link>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
+  data(){
+    return{
+      title: "CSS Quiz for beginner",
+      text: "The test contains 5 questions with no time limit.",
+      id: 1
+    }
   }
+ 
 }
 </script>
+
+<style>
+  .title{
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+  }
+  .instruction{
+    margin-top: 0;
+  }
+
+  .start{
+     margin-top: 2rem;
+  }
+</style>

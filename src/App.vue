@@ -1,12 +1,17 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <router-view class="router"/>
 </template>
 
 <style>
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url(https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -15,16 +20,62 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+.router{
+  margin: 100px auto;
+  max-width: 680px;
+  min-height: 450px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.router::after{
+  content: '';
+  position: absolute;
+  width: 95%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 20px;
+  background-color: linear-gradient(251deg, #2c3e50 -53%, rgba(255, 255, 255, 0) 65%);
+  backdrop-filter: blur(30px);
+  box-shadow: rgba(6, 6, 6, 0.2) 0px 7px 29px 0px;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.router::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: .05;
+  z-index: -1;
+  background-color: #fff;
+}
+
+.btn{
+  border: none;
+  background-color: #2c3e50;
+  padding: .5rem 3rem;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 2px;
+  transition: background 300ms ease-in-out,
+              transform 500ms ease-in-out;
+}
+
+.btn:hover{
+  background-color: #416080;
+  transform: scale(1.1);
 }
 </style>

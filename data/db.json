@@ -1,0 +1,35 @@
+{
+    "quizes": [
+        {
+            "id": 1,
+            "question": "What does CSS stand for?",
+            "choices":["Computer Style Sheets", "Cascading Style Sheets", "Creative Style Sheets", "Colorful Style Sheets"],
+            "correctAnswer": "Cascading Style Sheets"
+        },
+        {
+            "id": 2,
+            "question": "The property in CSS used to change the background color of an element is?",
+            "choices":["bgcolor", "color", "background-color", "All of the above"],
+            "correctAnswer": "background-color"
+        },
+        {
+            "id": 3,
+            "question": "Which HTML attribute is used to define inline styles?",
+            "choices":["Style", "Font", "Styles", "Class"],
+            "correctAnswer": "Style"
+        },
+        {
+            "id": 4,
+            "question": "The Property in CSS used to control element's font size is?",
+            "choices":["text-style", "font-style", "text-size", "font-size"],
+            "correctAnswer": "font-size"
+        },
+        {
+            "id": 5,
+            "question": "Which is the correct CSS syntax?",
+            "choices":["{body:color=black;}", "{body;color:black;}", "body {color: black;}", "body:color=black;"],
+            "correctAnswer": "{body;color:black;}"
+        }
+        
+    ]
+}
