@@ -47,7 +47,7 @@ export default {
 
               if(!(this.number > this.q)){
              this.$router.push('/questions/' + this.number)
-             fetch('http://localhost:3000/quizes/' + this.number)
+             fetch('https://my-json-server.typicode.com/CharmaineHYM/quiz-database/quizes/' + this.number)
                 .then(res => res.json())
                 .then(data => {
                     this.quiz = data
@@ -63,7 +63,7 @@ export default {
            }
     },
     mounted(){
-        fetch('http://localhost:3000/quizes/' + this.id)
+        fetch('https://my-json-server.typicode.com/CharmaineHYM/quiz-database/quizes/' + this.id)
         .then(res => res.json())
         .then(data => {
             this.quiz = data
