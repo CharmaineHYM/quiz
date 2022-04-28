@@ -1,7 +1,10 @@
 <template>
   <div class="scoreView">
     <h1 class="result_title">Result</h1>
-    <div class="check">
+    <div v-if="!data.length">
+      <Spinner />
+    </div>
+    <div class="check" v-else>
     <div class="correct list"><p>Correct Answer:</p> <p>{{ correctAnswer }}</p></div>
     <div class="incorrect list"><p>Incorrect Answer:</p> <p>{{ incorrectAnswer }}</p></div>
     <div class="empty list"><p>Empty:</p> <p>{{ empty }}</p></div>
@@ -11,8 +14,10 @@
 </template>
 
 <script>
+import Spinner from '../components/Spinner.vue'
 export default {
   props: ["answers"],
+  components: { Spinner },
   data(){
     return{
       correctAnswer:0,

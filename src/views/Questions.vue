@@ -1,6 +1,9 @@
 <template>
     <div class="questionView">
-        <form class="question">
+        <div v-if="!quiz.id">
+            <Spinner />
+        </div>
+        <form class="question" v-else>
         <h1>{{ quiz.question }}</h1>
         <div class="choices" v-for="choice in quiz.choices" :key="choice">
             <input class="choice" type="radio" :id="choice" :value="choice" v-model="selected"  @click="storeAnswer">
@@ -15,8 +18,11 @@
 </template>
 
 <script>
+import Spinner from '../components/Spinner.vue'
+
 export default {
     props: ['id'],
+    components: { Spinner },
     data(){
         return{
             quiz: [],
