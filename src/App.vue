@@ -44,6 +44,7 @@ body{
   transform: translate(-50%, -50%);
   z-index: -1;
   border-radius: 20px;
+  background-color: #6f6f6f3b;
   background-color: linear-gradient(251deg, #2c3e50 -53%, rgba(255, 255, 255, 0) 65%);
   backdrop-filter: blur(30px);
   box-shadow: rgba(6, 6, 6, 0.2) 0px 7px 29px 0px;
