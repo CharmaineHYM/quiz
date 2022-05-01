@@ -23,8 +23,7 @@ export default {
       correctAnswer:0,
       incorrectAnswer: 0,
       empty: 0,
-      data: [],
-      check: []
+      data: []
     }
   },
   mounted(){
@@ -32,19 +31,22 @@ export default {
         .then(res => res.json())
         .then(data => {
             this.data = data
-           for(let i =0; i<this.data.length; i++){
-             this.check.push(this.data[i].correctAnswer)
-           }
         })
         .then(() => {
-          for(let i=0; i<this.check.length; i++){
+          for(let i=0; i<this.answers.length; i++){
+            let question = this.data[i]
+            let choices = question.choices
+            let correctAns = function(){
+              return question.correctAnswer
+            }
+            console.log(correctAns)
             if(this.answers[i] === ''){
               this.empty++
             }
-            if(this.check[i] === this.answers[i]){
+            if(choices[correctAns()] === this.answers[i]){
                 this.correctAnswer++
             }
-            if(!(this.check[i] === this.answers[i]) && !(this.answers[i] === '')){
+            if(!(choices[correctAns()] === this.answers[i]) && !(this.answers[i] === '')){
               this.incorrectAnswer++
             }     
            }
