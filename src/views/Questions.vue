@@ -7,7 +7,7 @@
         <h1>{{ quiz.question }}</h1>
         <div class="choices" v-for="choice in quiz.choices" :key="choice">
             <input class="choice" type="radio" :id="choice" :value="choice" v-model="selected"  @click="storeAnswer">
-            <label :for="choice">{{ choice }}</label>
+            <label :for="choice" class="choice_label">{{ choice }}</label>
          </div>
         <button class="btn next" @click.prevent="submitAnswer" v-if="submit">Next</button>
         <router-link :to="{ name: 'Score', params: { answers: this.answers }}" v-if="final" >
@@ -90,7 +90,7 @@ export default {
     input{
         display: none;
     }
-    label {
+    .choice_label {
         position: relative;
 		font-weight: bold;
         padding: .5rem 0;
@@ -105,12 +105,12 @@ export default {
                     box-shadow 300ms ease-in-out;
     }
 
-    label:hover{
+    .choice_label:hover{
         background-color: #4B9DEA;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
 
-    input[type="radio"]:checked + label{
+    input[type="radio"]:checked + .choice_label{
         background-color: #4B9DEA;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
