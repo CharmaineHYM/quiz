@@ -85,8 +85,6 @@ export default {
     overflow: hidden;
   } 
   .scoreView .choice_label:hover{
-    background-color: transparent;
-    box-shadow: rgba(255, 255, 255, 0) 0px 8px 24px;
     cursor: auto;
   }
   .result_title{

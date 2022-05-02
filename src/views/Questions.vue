@@ -105,12 +105,12 @@ export default {
                     box-shadow 300ms ease-in-out;
     }
 
-    .choice_label:hover{
+    .questionView .choice_label:hover{
         background-color: #4B9DEA;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
 
-    input[type="radio"]:checked + .choice_label{
+    .questionView input[type="radio"]:checked + .choice_label{
         background-color: #4B9DEA;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
